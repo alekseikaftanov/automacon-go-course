@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Задача 3.1. Необходимо создать глобальную константу и вывести её значение в консоль
 
 // const myConst = 10
@@ -60,3 +62,16 @@ package main
 // }
 
 // Задача 3.7. Генератор Iota
+
+func main() {
+
+	const (
+		myConst1 = 1 << iota * 2
+		myConst2
+		myConst3
+		myConst4
+	)
+
+	fmt.Println(myConst1, myConst2, myConst3, myConst4)
+
+}
