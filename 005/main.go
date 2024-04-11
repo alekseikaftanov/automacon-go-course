@@ -6,10 +6,9 @@ import (
 
 // 5.1 Необходимо создать указатель на строковое значение
 
-func stringAdress() {
-	var a string = "Hello, Go(5.1)!"
-	var b *string = &a
-	fmt.Println(b)
+func stringAdress(s string) {
+	var pointer *string = &s
+	fmt.Println("String pointer: ", pointer)
 }
 
 // 5.2 Необходимо создать переменную. В консоль вывести её значение и адрес
@@ -48,7 +47,7 @@ func groupVariables() {
 	fmt.Println("Address of myVar4: ", &myVar4)
 }
 
-/* Необходимо создать функцию change, которая принимает параметр и изменяет его значение.
+/* 5.5 Необходимо создать функцию change, которая принимает параметр и изменяет его значение.
 В функции main необходимо создать локальную переменную и вызвать change таким образом,
 чтобы она изменила значение локальной переменной.*/
 
@@ -57,8 +56,43 @@ func change(a *int) {
 	fmt.Println("Value of a: ", *a)
 }
 
+/* 5.6 Необходимо создать пользовательский тип square на базе int.
+Далее необходимо создать переменную s типа square и значением 25.
+Необходимо вывести значение переменной в консоль*/
+
+func createType() {
+	type square int
+	s := square(25)
+	fmt.Println(s)
+}
+
+/* 5.7 Необходимо создать пользовательский тип square на базе int.
+Далее необходимо создать переменную s типа square и значением 30.
+Значение переменной s необходимо увеличить на 15 и вывести
+результат в консоль. */
+
+func increaseSquare() {
+	type square int
+	s := square(30)
+	s += 15
+	fmt.Println("Square: ", s)
+}
+
+/* 5.8 Необходимо создать пользовательский тип square на базе int. Далее необходимо создать переменную s типа square и значением 34.
+Значение переменной s необходимо увеличить на 10 и вывести
+результат в консоль. Тип square при выводе в консоль должен
+автоматически дописывать м², то есть результат должен
+выглядеть: 44 м².*/
+
+func printSquareMeters() {
+	type square int
+	s := square(34)
+	s += 10
+	fmt.Println(s, "м²")
+}
+
 func main() {
-	stringAdress() // 5.1
+	stringAdress("Hello, Go(5.1)!") // 5.1
 	fmt.Println("-----")
 	valueAndAddress() // 5.2
 	fmt.Println("-----")
@@ -68,4 +102,10 @@ func main() {
 	fmt.Println("-----")
 	a := 42
 	change(&a) // 5.5
+	fmt.Println("-----")
+	createType() // 5.6
+	fmt.Println("-----")
+	increaseSquare() // 5.7
+	fmt.Println("-----")
+	printSquareMeters() // 5.8
 }
