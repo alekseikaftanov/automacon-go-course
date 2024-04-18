@@ -81,6 +81,26 @@ func multipleSlices() {
 Далее удалить элемент «4» и вывести результат в консоль.
 */
 
+func deleteValue(n int) {
+
+	mySlice := []int{1, 2, 3, 4, 5, 6}
+	indexToRemove := -1
+
+	for i, value := range mySlice {
+
+		if value == n {
+			indexToRemove = i
+			break
+		}
+	}
+	if indexToRemove != -1 {
+		mySlice = append(mySlice[:indexToRemove], mySlice[indexToRemove+1:]...)
+
+	}
+
+	fmt.Println(mySlice)
+}
+
 func main() {
 	stringArray()      // 7.1
 	fruitArray()       // 7.2
@@ -89,5 +109,5 @@ func main() {
 	makeEmptySlice(10) // 7.5
 	addToSlice()       //7.6
 	multipleSlices()   // 7.7
-	// deleteValue(4)     // 7.8
+	deleteValue(4)     // 7.8
 }
