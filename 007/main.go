@@ -82,22 +82,19 @@ func multipleSlices() {
 */
 
 func deleteValue(n int) {
-
 	mySlice := []int{1, 2, 3, 4, 5, 6}
-	indexToRemove := -1
+	indexToDelete := -1
 
 	for i, value := range mySlice {
-
 		if value == n {
-			indexToRemove = i
+			indexToDelete = i
 			break
 		}
-	}
-	if indexToRemove != -1 {
-		mySlice = append(mySlice[:indexToRemove], mySlice[indexToRemove+1:]...)
+		if indexToDelete != -1 {
+			mySlice = append(mySlice[:indexToDelete], mySlice[indexToDelete+1:]...)
+		}
 
 	}
-
 	fmt.Println(mySlice)
 }
 
@@ -111,3 +108,23 @@ func main() {
 	multipleSlices()   // 7.7
 	deleteValue(4)     // 7.8
 }
+
+// func deleteValue(n int) {
+
+// 	mySlice := []int{1, 2, 3, 4, 5, 6}
+// 	indexToRemove := -1
+
+// 	for i, value := range mySlice {
+
+// 		if value == n {
+// 			indexToRemove = i
+// 			break
+// 		}
+// 	}
+// 	if indexToRemove != -1 {
+// 		mySlice = append(mySlice[:indexToRemove], mySlice[indexToRemove+1:]...)
+
+// 	}
+
+// 	fmt.Println(mySlice)
+// }
