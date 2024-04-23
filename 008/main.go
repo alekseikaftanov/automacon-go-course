@@ -104,9 +104,9 @@ func updateValue(key string, value int) {
 }
 
 func main() {
-	// printMap()
-	// printMapWithChanges()
-	// deleteKey("бегемот")
-	// addKey("выдра")
+	printMap()
+	printMapWithChanges()
+	deleteKey("бегемот")
+	addKey("выдра")
 	updateValue("бегемот", 2)
 }
