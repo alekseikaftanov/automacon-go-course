@@ -33,8 +33,48 @@ func fruitMarket(fruit string) {
 вложенных цикла. Каждый цикл должен в консоль выводить текущее
 значение среза. Причём внутренние срезы должны содержать отступы
 для облегчения визуального восприятия. Внутренний срез на ключе 1
-должен остановить все циклы, начиная со второго цикла.
+должен остановить все циклы, начиная со второго цикла. В консоли должно быть:
+v1: 1
+     v2: 1
+          v3: 1
+               v4: 1
+               v4: 2
+v1: 2
+    v2: 1
+        v3: 1
+          v4: 1
+          v4: 2
+v1: 3
+    v2: 1
+        v3: 1
+            v4: 1
 */
+
+func loop() {
+	mySlice := []int{1, 2, 3}
+
+	for _, v1 := range mySlice {
+		fmt.Printf("v1: %d\n", v1)
+		for _, v2 := range mySlice {
+			fmt.Printf("    v2: %d\n", v2)
+			for _, v3 := range mySlice {
+				fmt.Printf("        v3: %d\n", v3)
+				for _, v4 := range mySlice {
+					fmt.Printf("            v4: %d\n", v4)
+					if v4 == 1 {
+						break
+					}
+				}
+				if v3 == 1 {
+					break
+				}
+			}
+			if v2 == 1 {
+				break
+			}
+		}
+	}
+}
 
 /*
 Задача 9.3
@@ -92,9 +132,9 @@ func checkFood(food string) {
 // }
 
 func main() {
-	fruitMarket("Plums") // Задача 9.1
-	// loop() // Задача 9.2
-	checkFood("Apple")
-	checkFood("Pumpkin")
-	checkFood("Heizenberg") // Задача 9.3
+	// fruitMarket("Plums") // Задача 9.1
+	loop() // loop() // Задача 9.2
+	// checkFood("Apple")
+	// checkFood("Pumpkin")
+	// checkFood("Heizenberg") // Задача 9.3
 }
