@@ -1,35 +1,61 @@
 package main
 
-import (
-	"fmt"
-)
-
-func bankPercent() {
-	var ammount int
-	fmt.Print("Введите сумму ")
-	fmt.Scanf("%d", &ammount)
-
-	var percent int
-	fmt.Print("Введите банковский процент ")
-	fmt.Scanf("%d", &percent)
-
-	var qurency string
-	fmt.Print("Введите валюту ")
-	fmt.Scanf("%s", &qurency)
-
-	var monthIncome, yearIncome int // Переменные объявлены здесь, чтобы они были видны во всей функции main()
-
-	if qurency == "Тенге" || qurency == "Тэнге" {
-		monthIncome = (ammount * percent) / 100 * 85 / 100 / 12 // Убрал 0.85, умножил на 85 и разделил на 100
-		yearIncome = (ammount * percent) / 100 * 85 / 100       // Убрал 0.85, умножил на 85 и разделил на 100
-		fmt.Printf("Если положить вклад в банк Казахстана под %d процентов, то в месяц будет %d %s, а в год %d %s.", percent, monthIncome, qurency, yearIncome, qurency)
-	} else {
-		monthIncome = (ammount * percent) / 100 / 12
-		yearIncome = (ammount * percent) / 100
-		fmt.Printf("Если положить вклад в банк под %d процентов, то в месяц будет %d %s, а в год %d %s.", percent, monthIncome, qurency, yearIncome, qurency)
-	}
+// Интерфейсы: получение информации о объекте
+type Item interface {
+	GetTitle() string
+	GetAuthor() string
+	GetYear() int
 }
 
-func main() {
-	bankPercent()
+type Borrowable interface {
+	Borrow() bool
+	Return() bool
+	IsBorrowed() bool
+}
+
+type Periodical interface {
+	isPeriodical() bool
+}
+
+// Структура и методы для книги
+type Book struct {
+	title    string
+	author   string
+	year     int
+	borrowed bool
+}
+
+func (b *Book) GetTitle() string {
+	return b.title
+}
+
+func (b *Book) GetAuthor() string {
+	return b.author
+}
+
+func (b *Book) GetYear() int {
+	return b.year
+}
+
+func (b Book) IsBorrowed() bool {
+	return b.borrowed
+}
+
+// Borrow
+
+func (b *Book) Borrow() bool {
+	if b.borrowed {
+		return false
+	}
+	b.borrowed = true
+	return true
+}
+
+// Return
+func (b *Book) Return() bool {
+	if !b.borrowed {
+		return false
+	}
+	b.borrowed = false
+	return true
 }

@@ -1,5 +1,6 @@
+// package main
 
-
+// import "fmt"
 
 // // Собственная функция Append. Принимает слайс и произвольное кол-во элментов
 // func customAppend(slice []int, elements ...int) {
@@ -14,4 +15,8 @@
 // 	slice = slice[:newLenght]      // Нихуя не понимаем
 // 	copy(slice[lenght:], elements) // Нихуя не понимаем
 // 	fmt.Println(slice)
+// }
+
+// func main(){
+// 	customAppend({1,2,3}, 2)
 // }
