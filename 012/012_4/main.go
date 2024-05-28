@@ -33,10 +33,8 @@ func main() {
 	fmt.Println(song)
 }
 func Sing(b Bird) (string, error) {
-
-	fmt.Println(b)
-	if b != nil {
-		return "", errors.New("Ошибка пения!") // Исправляем код
+	if b == nil {
+		return "", errors.New("Bird is nil")
 	}
 	return b.Sing(), nil
 }
