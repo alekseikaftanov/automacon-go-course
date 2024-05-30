@@ -109,6 +109,16 @@ func parseXml() {
 }
 */
 
+func xmlCreateFromStruct() {
+	var contract Contract
+	xmlData, err := xml.Marshal(contract)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Println(string(xmlData))
+}
+
 /*
 В рамках задачи будем работать с картотекой известного врача. Нужно будет написать модуль с несколькими версиями: v1.0.0, v1.1.0, v2.0.0, v2.1.0. Модуль должен прочитать файл со следующим содержимым:
 
