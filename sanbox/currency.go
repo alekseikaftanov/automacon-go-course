@@ -30,6 +30,6 @@ func bankPercent() {
 	}
 }
 
-func main() {
-	bankPercent()
-}
+// func main() {
+// 	bankPercent()
+// }

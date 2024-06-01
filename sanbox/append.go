@@ -17,6 +17,6 @@ func customAppend(slice []int, elements ...int) {
 	fmt.Println(slice)
 }
 
-func main(){
-	customAppend({1,2,3}, 2)
-}
+// func main(){
+// 	customAppend({1,2,3}, 2)
+// }

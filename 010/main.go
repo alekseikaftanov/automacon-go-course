@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	first "myfirst/010"
 )
 
 func main() {
-	fmt.Print("Hello, package!")
+	msg := fmt.Sprintf("Hello, my %s package!", first.Hello())
+	fmt.Println(msg)
 }

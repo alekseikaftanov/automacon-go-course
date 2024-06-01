@@ -73,6 +73,8 @@ fmt.Println("завершение работы главной горутины")
 func main() {
 	ch := make(chan int)
 	stop := make(chan struct{}, 3)
+	stop <- struct{}{}
+	stop <- struct{}{}
 	go func() {
 	OUT:
 		for {
@@ -108,9 +110,9 @@ func main() {
 		}
 		fmt.Println("завершение работы горутины_2")
 	}()
+	ch = nil
 	time.Sleep(5 * time.Second)
 	stop <- struct{}{}
 	stop <- struct{}{}
-	time.Sleep(time.Second)
 	fmt.Println("завершение работы главной горутины")
 }
