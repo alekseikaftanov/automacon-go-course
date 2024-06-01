@@ -71,21 +71,20 @@ fmt.Println("завершение работы главной горутины")
 */
 
 func main() {
-
 	ch := make(chan int)
-	stop := make(chan struct{}, 2)
+	stop := make(chan struct{}, 3)
 	go func() {
 	OUT:
 		for {
 			select {
-			case <-stop:
+			case <-stop: //Если получено значение из канала stop, выполнение переходит на метку OUT, что приводит к завершению цикла.
 				break OUT
-			case v, ok := <-ch:
+			case v, ok := <-ch: // Если получено значение из канала ch, оно присваивается переменной v, а переменная ok указывает на успешность операции. Если ok равно false (канал закрыт), происходит выход из цикла.
 				if !ok {
 					break OUT
 				}
 				fmt.Println(v)
-			default:
+			default: // Если ни один из других каналов не готов, выполнение продолжается с continue.
 				continue
 			}
 		}
@@ -109,7 +108,7 @@ func main() {
 		}
 		fmt.Println("завершение работы горутины_2")
 	}()
-	//time.Sleep(5 * time.Second)
+	time.Sleep(5 * time.Second)
 	stop <- struct{}{}
 	stop <- struct{}{}
 	time.Sleep(time.Second)
