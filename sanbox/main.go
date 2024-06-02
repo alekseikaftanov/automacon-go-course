@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // // Интерфейсы: получение информации о объекте
 // type Item interface {
@@ -62,17 +65,35 @@ import "fmt"
 // 	return true
 // }
 
+// func main() {
+// a := []int{0, 1, 2, 3, 4}
+// fmt.Printf("a=%v, len=%d, cap=%d\n ", a, len(a), cap(a)) //a=[0 1 2 3 4], len=5, cap=5
+
+// b := a[1:2]
+// fmt.Printf("b=%v, len=%d, cap=%d\n ", b, len(b), cap(b))
+
+// c := append(a, 5)
+// fmt.Printf("c=%v, len=%d, cap=%d\n ", c, len(c), cap(c))
+
+// b = append(b, 100)
+
+// fmt.Printf("a=%v, len=%d, cap=%d\n ", a, len(a), cap(a))
+// }
+
 func main() {
-	a := []int{0, 1, 2, 3, 4}
-	fmt.Printf("a=%v, len=%d, cap=%d\n ", a, len(a), cap(a)) //a=[0 1 2 3 4], len=5, cap=5
+	s1 := []int{1, 2, 3}
+	for i := 0; i < len(s1); i++ {
+		s1 = append(s1, 10)
 
-	b := a[1:2]
-	fmt.Printf("b=%v, len=%d, cap=%d\n ", b, len(b), cap(b))
+		time.Sleep(500 * time.Millisecond)
+		fmt.Println(s1)
+	}
 
-	c := append(a, 5)
-	fmt.Printf("c=%v, len=%d, cap=%d\n ", c, len(c), cap(c))
+	s2 := []int{1, 2, 3}
+	for range s2 {
+		s2 = append(s2, 10)
 
-	b = append(b, 100)
-
-	fmt.Printf("a=%v, len=%d, cap=%d\n ", a, len(a), cap(a))
+		time.Sleep(500 * time.Millisecond)
+		fmt.Println(s2)
+	}
 }
