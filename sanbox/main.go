@@ -1,7 +1,9 @@
 package main
 
 import (
+	"context"
 	"fmt"
+	"sync"
 	"time"
 )
 
@@ -65,6 +67,8 @@ import (
 // 	return true
 // }
 
+// Задачи по слайсам
+
 // func main() {
 // a := []int{0, 1, 2, 3, 4}
 // fmt.Printf("a=%v, len=%d, cap=%d\n ", a, len(a), cap(a)) //a=[0 1 2 3 4], len=5, cap=5
@@ -80,20 +84,53 @@ import (
 // fmt.Printf("a=%v, len=%d, cap=%d\n ", a, len(a), cap(a))
 // }
 
+// func main() {
+// 	s1 := []int{1, 2, 3}
+// 	for i := 0; i < len(s1); i++ {
+// 		s1 = append(s1, 10)
+
+// 		time.Sleep(500 * time.Millisecond)
+// 		fmt.Println(s1)
+// 	}
+
+// 	s2 := []int{1, 2, 3}
+// 	for range s2 {
+// 		s2 = append(s2, 10)
+
+// 		time.Sleep(500 * time.Millisecond)
+// 		fmt.Println(s2)
+// 	}
+// }
+
+// Контекст
+
 func main() {
-	s1 := []int{1, 2, 3}
-	for i := 0; i < len(s1); i++ {
-		s1 = append(s1, 10)
-
-		time.Sleep(500 * time.Millisecond)
-		fmt.Println(s1)
+	ctx := context.Background()
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+	wg := sync.WaitGroup{}
+	for i := 0; i < 3; i++ {
+		i := i
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for {
+				select {
+				case <-ctx.Done():
+					fmt.Println("стоп горутина: ", i)
+					return
+				default:
+					time.Sleep(7 * time.Millisecond)
+					fmt.Println("сложные вычисления горутины: ", i)
+				}
+			}
+		}()
 	}
-
-	s2 := []int{1, 2, 3}
-	for range s2 {
-		s2 = append(s2, 10)
-
-		time.Sleep(500 * time.Millisecond)
-		fmt.Println(s2)
-	}
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		fmt.Println("стоп!")
+		cancel()
+	}()
+	wg.Wait()
 }
