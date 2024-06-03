@@ -9,11 +9,15 @@ import "fmt"
 */
 
 func main() {
-	ch := make(chan string, 8)
-	ch <- "Привет"
+	ch := make(chan interface{}, 3) //
+	ch <- 2                         // Запись в канал
 	ch <- "буферизованный канал!"
+	ch <- "Привет"
 
-	fmt.Println(<-ch)
+	myInt := <-ch
+
+	fmt.Println(<-ch) // Значения, записанные в буфер
+	fmt.Println(myInt)
 	fmt.Println(<-ch)
 
 }

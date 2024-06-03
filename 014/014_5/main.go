@@ -71,16 +71,16 @@ fmt.Println("завершение работы главной горутины")
 */
 
 func main() {
-	ch := make(chan int)
-	stop := make(chan struct{}, 3)
-	stop <- struct{}{}
+	ch := make(chan int)           // Небуфферизированный канал
+	stop := make(chan struct{}, 2) // Буфферизированный канал
+	stop <- struct{}{}             // Записываем в канал Stop пустую структуру
 	stop <- struct{}{}
 	go func() {
-	OUT:
+	OUT: // Метка выхода из цикла
 		for {
-			select {
+			select { // Оператор select позволяет ожидать значение из канала или ожидать записи в канал.
 			case <-stop: //Если получено значение из канала stop, выполнение переходит на метку OUT, что приводит к завершению цикла.
-				break OUT
+				break OUT // Вот для этого
 			case v, ok := <-ch: // Если получено значение из канала ch, оно присваивается переменной v, а переменная ok указывает на успешность операции. Если ok равно false (канал закрыт), происходит выход из цикла.
 				if !ok {
 					break OUT
@@ -110,9 +110,6 @@ func main() {
 		}
 		fmt.Println("завершение работы горутины_2")
 	}()
-	ch = nil
 	time.Sleep(5 * time.Second)
-	stop <- struct{}{}
-	stop <- struct{}{}
 	fmt.Println("завершение работы главной горутины")
 }
