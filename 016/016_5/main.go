@@ -1,7 +1,13 @@
 package main
 
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
 /*
-16.5 Неиспользуя context и буферизованные каналы необходимо написать программу,
+16.5 Не используя context и буферизованные каналы необходимо написать программу,
 которая будет запускать 10 рабочих горутин и одну управляющую горутину.
 Каждая рабочая горутина с задержкой в 1 секунду должна выводить в stdout
 сообщение «сложныевычислениягорутины: 1»,
@@ -41,3 +47,37 @@ stop горутина:  1
 сложныевычислениягорутины:  5
 stop горутина:  5
 */
+
+func main() {
+	var wg sync.WaitGroup
+	stopChan := make(chan struct{})
+
+	// Запуск 10 рабочих горутин
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			ticker := time.NewTicker(1 * time.Second)
+			defer ticker.Stop()
+			for {
+				select {
+				case <-stopChan:
+					fmt.Printf("stop горутина: %d\n", i)
+					return
+				case <-ticker.C:
+					fmt.Printf("сложныевычислениягорутины: %d\n", i)
+				}
+			}
+		}(i)
+	}
+
+	// Запуск управляющей горутины
+	go func() {
+		time.Sleep(3 * time.Second)
+		fmt.Println("ой, всё!")
+		close(stopChan)
+	}()
+
+	// Ожидание завершения всех горутин
+	wg.Wait()
+}
