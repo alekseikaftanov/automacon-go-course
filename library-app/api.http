@@ -1,0 +1,88 @@
+### Создание книги
+POST http://localhost:8000/books
+Content-Type: application/json
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+### Создание автора
+POST http://localhost:8000/authors
+Content-Type: application/json
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+
+}
+
+### Получение всех книг
+GET http://localhost:8000/books
+Content-Type: application/json
+
+###
+
+### Получение книги по ID
+GET http://localhost:8000/books/5
+Content-Type: application/json
+
+###
+
+### Обновление книги
+PUT http://localhost:8000/books/7
+Content-Type: application/json
+
+{
+  "title": "The Catcher in the Ry!",
+  "author": "J.D. Salinger",
+  "year": 1951,
+  "isbn": "978-0-316-76948-0"
+}
+
+### Удаление книги
+DELETE http://localhost:8000/books/10
+Content-Type: application/json
+
+### Получение всех авторов
+GET http://localhost:8000/authors
+Content-Type: application/json
+
+### Получение автора по ID
+GET http://localhost:8000/authors/16
+Content-Type: application/json
+
+### Обновление автора
+PUT http://localhost:8000/authors/17
+Content-Type: application/json
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+}
+
+### Удаление автора
+DELETE http://localhost:8000/authors/16
+Content-Type: application/json
+
+### Транзакционное обновление книги и автора
+POST http://localhost:8000//books/10/authors/16
+Content-Type: application/json
+
+    {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "isbn": "978-0-316-76948-0",
+    "name": "J.D.",
+    "surname": "Salinger",
+    "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye and more.",
+    "birthday": "1919-01-01"
+    }
+
