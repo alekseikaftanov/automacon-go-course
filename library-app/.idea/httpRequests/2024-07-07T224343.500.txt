@@ -1,0 +1,1 @@
+usecase update author: postgres update author: sql: no rows in result set

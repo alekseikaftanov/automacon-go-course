@@ -1,0 +1,731 @@
+POST http://localhost:8000/books/10/authors/16
+Content-Type: application/json
+Content-Length: 312
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+    {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "isbn": "978-0-316-76948-0",
+    "name": "J.D.",
+    "surname": "Salinger",
+    "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+    "birthday": "1919-01-01"
+    }
+
+###
+
+POST http://localhost:8000/books/10/authors/16
+Content-Type: application/json
+Content-Length: 312
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+    {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "isbn": "978-0-316-76948-0",
+    "name": "J.D.",
+    "surname": "Salinger",
+    "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+    "birthday": "1919-01-01"
+    }
+
+###
+
+POST http://localhost:8000/books/10/authors/16
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+POST http://localhost:8000/books/10/authors/16
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+POST http://localhost:8000/transaction
+Content-Type: application/json
+Content-Length: 366
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "book": {
+    "id": 10,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "isbn": "978-0-316-76948-0"
+  },
+  "author": {
+    "id": 16,
+    "name": "J.D.",
+    "surname": "Salinger",
+    "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+    "birthday": "1919-01-01"
+  }
+}
+
+<> 2024-07-08T121404.404.txt
+
+###
+
+POST http://localhost:8000/transaction
+Content-Type: application/json
+Content-Length: 365
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "book": {
+    "id": 7,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "isbn": "978-0-316-76948-0"
+  },
+  "author": {
+    "id": 17,
+    "name": "J.D.",
+    "surname": "Salinger",
+    "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+    "birthday": "1919-01-01"
+  }
+}
+
+<> 2024-07-08T121338.404.txt
+
+###
+
+POST http://localhost:8000/transaction
+Content-Type: application/json
+Content-Length: 365
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "book": {
+    "id": 7,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": 1951,
+    "isbn": "978-0-316-76948-0"
+  },
+  "author": {
+    "id": 17,
+    "name": "J.D.",
+    "surname": "Salinger",
+    "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+    "birthday": "1919-01-01"
+  }
+}
+
+<> 2024-07-08T115415.404.txt
+
+###
+
+POST http://localhost:8000/authors
+Content-Type: application/json
+Content-Length: 176
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+
+}
+
+<> 2024-07-08T103340.409.txt
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T225301.409.txt
+
+###
+
+PUT http://localhost:8000/authors/17
+Content-Type: application/json
+Content-Length: 175
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+}
+
+<> 2024-07-07T224520.200.txt
+
+###
+
+PUT http://localhost:8000/authors/17
+Content-Type: application/json
+Content-Length: 175
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+}
+
+<> 2024-07-07T224348.200.txt
+
+###
+
+PUT http://localhost:8000/authors/16
+Content-Type: application/json
+Content-Length: 175
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+}
+
+<> 2024-07-07T224343.500.txt
+
+###
+
+PUT http://localhost:8000/authors/14
+Content-Type: application/json
+Content-Length: 175
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+}
+
+<> 2024-07-07T224334.500.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223930.200.json
+
+###
+
+POST http://localhost:8000/authors
+Content-Type: application/json
+Content-Length: 176
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+
+}
+
+<> 2024-07-07T223926.201.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223914.200.json
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223911.201.txt
+
+###
+
+GET http://localhost:8000/books
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223903.200.txt
+
+###
+
+DELETE http://localhost:8000/authors/16
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223900.200.txt
+
+###
+
+DELETE http://localhost:8000/authors/15
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223857.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/14
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223854.200.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223826.200.json
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223824.201.txt
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223823.201.txt
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223822.201.txt
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223821.201.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223809.200.json
+
+###
+
+POST http://localhost:8000/authors
+Content-Type: application/json
+Content-Length: 176
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+
+}
+
+<> 2024-07-07T223805.201.txt
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223802.201.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223757.200.json
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223259.200.json
+
+###
+
+GET http://localhost:8000/books
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223252.200.txt
+
+###
+
+POST http://localhost:8000/books
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "year": 1984,
+  "isbn": "ertyuihgfd"
+}
+
+<> 2024-07-07T223248.201.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T223239.200.json
+
+###
+
+POST http://localhost:8000/authors
+Content-Type: application/json
+Content-Length: 176
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "J.D.",
+  "surname": "Salinger",
+  "bio" : "Jerome David Salinger was an American writer known for his novel The Catcher in the Rye.",
+  "birthday": "1919-01-01"
+
+}
+
+<> 2024-07-07T223230.201.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T221910.200.json
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T221751.500.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T220930.500.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T220524.500.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T220206.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/3
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205041.500.txt
+
+###
+
+GET http://localhost:8000/authors
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205030.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/15
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205027.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/14
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205024.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/13
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205021.200.txt
+
+###
+
+DELETE http://localhost:8000/authors/12
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205017.200.txt
+
+###
+
+DELETE http://localhost:8000/authors/11
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205014.200.txt
+
+###
+
+DELETE http://localhost:8000/authors/10
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205011.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/9
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205007.500.txt
+
+###
+
+DELETE http://localhost:8000/authors/8
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-07T205004.200.txt
+
+###
+

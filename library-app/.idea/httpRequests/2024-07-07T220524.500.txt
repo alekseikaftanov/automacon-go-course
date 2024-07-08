@@ -1,0 +1,1 @@
+usecase get all authors: postgres get all authors: sql: Scan error on column index 3, name "bio": converting NULL to string is unsupported

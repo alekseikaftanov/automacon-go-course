@@ -1,0 +1,1 @@
+usecase delete author: postgres delete author: pq: update or delete on table "authors" violates foreign key constraint "books_author_id_fkey" on table "books"

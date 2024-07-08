@@ -1,0 +1,1 @@
+usecase delete author: postgres delete author: sql: no rows in result set
