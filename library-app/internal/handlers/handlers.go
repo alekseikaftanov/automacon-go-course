@@ -13,16 +13,16 @@ import (
 )
 
 func RegisterBookHandlers(r *mux.Router, uc *usecase.UseCase) {
-	r.HandleFunc("/books", createBook(uc)).Methods("POST")
-	r.HandleFunc("/books", getBooks(uc)).Methods("GET")
-	r.HandleFunc("/books/{id}", getBookByID(uc)).Methods("GET")
-	r.HandleFunc("/books/{id}", updateBook(uc)).Methods("PUT")
-	r.HandleFunc("/books/{id}", deleteBook(uc)).Methods("DELETE")
-	r.HandleFunc("/authors", createAuthor(uc)).Methods("POST")
-	r.HandleFunc("/authors", getAllAuthors(uc)).Methods("GET")
-	r.HandleFunc("/authors/{id}", getAuthorByID(uc)).Methods("GET")
-	r.HandleFunc("/authors/{id}", updateAuthor(uc)).Methods("PUT")
-	r.HandleFunc("/authors/{id}", deleteAuthor(uc)).Methods("DELETE")
+	r.HandleFunc("/createBook", createBook(uc)).Methods("POST")
+	r.HandleFunc("/getBook", getBooks(uc)).Methods("GET")
+	r.HandleFunc("/getBookById/{id}", getBookByID(uc)).Methods("GET")
+	r.HandleFunc("/updateBook/{id}", updateBook(uc)).Methods("PUT")
+	r.HandleFunc("/deleteBook/{id}", deleteBook(uc)).Methods("DELETE")
+	r.HandleFunc("/createAuthor", createAuthor(uc)).Methods("POST")
+	r.HandleFunc("/getAuthors", getAllAuthors(uc)).Methods("GET")
+	r.HandleFunc("/getAuthorById/{id}", getAuthorByID(uc)).Methods("GET")
+	r.HandleFunc("/updateAuthor/{id}", updateAuthor(uc)).Methods("PUT")
+	r.HandleFunc("/deleteAuthor/{id}", deleteAuthor(uc)).Methods("DELETE")
 	r.HandleFunc("/books/{book_id}/authors/{author_id}", updateBookAndAuthor(uc)).Methods("PUT")
 }
 

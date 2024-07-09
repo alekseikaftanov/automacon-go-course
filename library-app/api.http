@@ -1,5 +1,5 @@
 ### Создание книги
-POST http://localhost:8000/books
+POST http://localhost:8000/createBook
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### Создание автора
-POST http://localhost:8000/authors
+POST http://localhost:8000/createAuthor
 Content-Type: application/json
 
 {
@@ -22,19 +22,19 @@ Content-Type: application/json
 }
 
 ### Получение всех книг
-GET http://localhost:8000/books
+GET http://localhost:8000/getBook
 Content-Type: application/json
 
 ###
 
 ### Получение книги по ID
-GET http://localhost:8000/books/5
+GET http://localhost:8000/getBookById/5
 Content-Type: application/json
 
 ###
 
 ### Обновление книги
-PUT http://localhost:8000/books/7
+PUT http://localhost:8000/updateBook/7
 Content-Type: application/json
 
 {
@@ -45,19 +45,19 @@ Content-Type: application/json
 }
 
 ### Удаление книги
-DELETE http://localhost:8000/books/10
+DELETE http://localhost:8000/deleteBook/10
 Content-Type: application/json
 
 ### Получение всех авторов
-GET http://localhost:8000/authors
+GET http://localhost:8000/getAuthors
 Content-Type: application/json
 
 ### Получение автора по ID
-GET http://localhost:8000/authors/16
+GET http://localhost:8000/getAuthorById/16
 Content-Type: application/json
 
 ### Обновление автора
-PUT http://localhost:8000/authors/17
+PUT http://localhost:8000/updateAuthor/17
 Content-Type: application/json
 
 {
@@ -68,7 +68,7 @@ Content-Type: application/json
 }
 
 ### Удаление автора
-DELETE http://localhost:8000/authors/16
+DELETE http://localhost:8000/deleteAuthor/16
 Content-Type: application/json
 
 ### Транзакционное обновление книги и автора

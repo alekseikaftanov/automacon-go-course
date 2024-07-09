@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -14,15 +15,15 @@ import (
 )
 
 func main() {
-	ctx := context.Background()
+	ctx := context.Background()                                                   //
 	connStr := "postgres://myuser:mypassword@localhost:5432/mydb?sslmode=disable" // DSN
 
 	repo, err := postgres.NewPostgres(ctx, connStr) // Create a new Postgres repository
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(fmt.Errorf("postgres new: %w", err))
 	}
 
-	uc := usecase.NewUseCase(repo) // Create a new UseCase
+	uc := usecase.NewUseCase(repo)
 
 	r := mux.NewRouter() // Create a new router
 	handlers.RegisterBookHandlers(r, uc)
